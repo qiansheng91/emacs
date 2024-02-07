@@ -45,8 +45,11 @@
 		"wj" '(evil-window-down :which-key "down")
 		"wl" '(evil-window-right :which-key "right")
 		"wk" '(evil-window-up :which-key "up")
-		"wK" '(kill-buffer-and-window :which-key "kill current window")
-		"wM" '(maximize-window :which-key "maximize"))
+		"wq" '(kill-buffer-and-window :which-key "kill current window")
+		"wM" '(maximize-window :which-key "maximize")
+		"wm" '(minimize-window :which-key "minimize")
+		"wn" '(evil-window-new :which-key "new")
+		"wv" '(evil-window-vnew :which-key "new(v)"))
 
 	;; yank pop
 	(my-leader-def 'normal
