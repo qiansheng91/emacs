@@ -93,8 +93,13 @@
 	:ensure t
   :init
   (savehist-mode))
-																				;
-;;
+
+(use-package general
+	:ensure t
+	:config
+	(general-create-definer my-leader-def
+		:prefix "SPC"))
+
 (use-package evil
   :ensure t
   :init
@@ -107,13 +112,6 @@
   :ensure t
   :config
   (evil-collection-init))
-;;
-
-(use-package general
-	:ensure t
-	:config
-	(general-create-definer my-leader-def
-		:prefix "SPC"))
 
 (use-package company
 	:ensure t
@@ -246,7 +244,6 @@
 	:custom
 	(shell-pop-shell-type '("eshell" "*eshell*" (lambda ()
 																								(eshell))))
-	:bind ("C-t" . shell-pop)
 	:config
 	(setq shell-pop-window-size 30)
 	(setq shell-pop-full-span t)

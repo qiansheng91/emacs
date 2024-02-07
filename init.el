@@ -32,6 +32,7 @@
 (require 'editor-keybinds)
 
 (require 'init-progn)
+(require 'init-yaml)
 (require 'init-json)
 (require 'init-golang)
 (require 'init-java)
