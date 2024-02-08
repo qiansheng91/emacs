@@ -6,12 +6,19 @@
 	(java-mode . eglot-ensure)
 	(go-mode . eglot-ensure))
 
-
+(use-package copilot
+  :straight (:host github :repo "copilot-emacs/copilot.el" :files ("dist" "*.el"))
+  :ensure t
+	:config
+	(add-hook 'prog-mode-hook 'copilot-mode))
 
 ;; key binding
 (use-package emacs
 	:general
-	(my-leader-def
-		"c" '(:ignore t :which-key "code")))
+	(my-leader-def 'normal
+		"c" '(:ignore t :which-key "code")
+		"cd" '(xref-find-definitions :which-key "definition")
+		"cr" '(xref-find-references :which-key "references")
+		"ci" '(eglot-find-implementation :which-key "implementations")))
 
 (provide 'init-progn)
