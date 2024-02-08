@@ -1,0 +1,8 @@
+.cache/
+.local/
+data/
+eglot-java-eclipse-jdt-cache/
+elpa/
+share/
+tree-sitter/
+var/

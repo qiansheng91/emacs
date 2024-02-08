@@ -120,6 +120,12 @@
 	(setq company-idle-delay 0.1)
 	(setq company-selection-wrap-around t))
 
+;; (use-package company-tabnine
+;; 	:ensure t
+;; 	:config
+;; 	(setq company-idle-delay 0)
+;; 	(add-to-list 'company-backends #'company-tabnine))
+
 (use-package which-key
 	:ensure t
 	:init
