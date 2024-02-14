@@ -120,12 +120,6 @@
 	(setq company-idle-delay 0.1)
 	(setq company-selection-wrap-around t))
 
-;; (use-package company-tabnine
-;; 	:ensure t
-;; 	:config
-;; 	(setq company-idle-delay 0)
-;; 	(add-to-list 'company-backends #'company-tabnine))
-
 (use-package which-key
 	:ensure t
 	:init
@@ -141,6 +135,7 @@
 	(marginalia-mode)
 	(with-eval-after-load 'projectile
 		(add-to-list 'marginalia-command-categories '(projectile-find-file . file))))
+
 (use-package embark
 	:ensure t
 	:after vertico
@@ -247,21 +242,24 @@
 
 (use-package shell-pop
 	:ensure t
+	:init
+	(add-hook 'eshell-mode-hook
+						(lambda()
+							(add-to-list 'eshell-visual-commands "ssh")
+							(add-to-list 'eshell-visual-commands "nano")
+							(add-to-list 'eshell-visual-commands "tail")
+							(add-to-list 'eshell-visual-commands "top")
+							(add-to-list 'eshell-visual-commands "htop")
+							(add-to-list 'eshell-visual-commands "prettyping")
+							(add-to-list 'eshell-visual-commands "ncdu")
+							(add-to-list 'eshell-visual-subcommands '("hg" "log" "diff"))))
 	:custom
 	(shell-pop-shell-type '("eshell" "*eshell*" (lambda ()
 																								(eshell))))
 	:config
 	(setq shell-pop-window-size 30)
 	(setq shell-pop-full-span t)
-	(setq shell-pop-window-position "bottom")
-	(add-to-list 'eshell-visual-commands "ssh")
-	(add-to-list 'eshell-visual-commands "nano")
-	(add-to-list 'eshell-visual-commands "tail")
-	(add-to-list 'eshell-visual-commands "top")
-	(add-to-list 'eshell-visual-commands "htop")
-	(add-to-list 'eshell-visual-commands "prettyping")
-	(add-to-list 'eshell-visual-commands "ncdu")
-	(add-to-list 'eshell-visual-subcommands '("hg" "log" "diff")))
+	(setq shell-pop-window-position "bottom"))
 
 (use-package all-the-icons
   :if (display-graphic-p))
@@ -375,5 +373,8 @@
   :after (treemacs persp-mode) ;;or perspective vs. persp-mode
   :ensure t
   :config (treemacs-set-scope-type 'Perspectives))
+
+(use-package iedit
+	:ensure t)
 
 (provide 'editor-basic)
