@@ -36,3 +36,4 @@
 (require 'init-json)
 (require 'init-golang)
 (require 'init-java)
+(require 'init-sql)

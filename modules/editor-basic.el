@@ -48,8 +48,8 @@
 	(display-time-mode -1)
 	(setq column-number-mode t)
 
-	(setq-default indent-tabs-mode t)
-	(setq-default tab-width 2)
+	;;(setq-default indent-tabs-mode t)
+	(setq-default tab-width 4)
 
 	(setq tab-always-indent 'complete))
 

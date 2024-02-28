@@ -5,7 +5,8 @@
 	(my-leader-def 'normal
 		"f" '(:ignore t :which-key "file")
 		"ff" '(find-file :which-key "find file")
-		"f." '(consult-mark :which-key "travel"))
+		"f." '(consult-mark :which-key "travel")
+		"fn" '(evil-buffer-new :which-key "new"))
 
 	;;
 	(my-leader-def 'normal
