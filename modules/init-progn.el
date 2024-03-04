@@ -22,8 +22,6 @@
 	(define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
 	(define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion))
 
-
-
 (use-package dape
   :ensure t
   :init
@@ -52,10 +50,6 @@
   ;; Projectile users
   (setq dape-cwd-fn 'projectile-project-root))
 
-
-(use-package jsonrpc
-  :ensure t
-  :straight (jsonrpc :type git :host github :repo "svaante/jsonrpc"))
 
 ;; key binding
 (use-package emacs

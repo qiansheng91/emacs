@@ -382,4 +382,10 @@
   :config
   (exec-path-from-shell-copy-env "GOPATH"))
 
+
+(use-package direnv
+  :ensure t
+  :config
+  (direnv-mode))
+
 (provide 'editor-basic)

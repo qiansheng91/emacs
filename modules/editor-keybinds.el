@@ -14,11 +14,13 @@
 
 	;; buffer
 	(my-leader-def 'normal
-		"b" '(:ignore t :which-key "buffer")
+		"b" '(:ignore t :which-key "buffer & bookmark")
 		"bb" '(consult-buffer :which-key "find buffer")
 		"bk" '(kill-current-buffer :which-key "kill buffer")
-		"b[" '(evil-prev-buffer :which-key "previous buffer")
-		"b]" '(evil-next-buffer :which-key "next buffer"))
+		"bs" '(bookmark-set :which-key "set bookmark")
+		"b[" '(evil-prev-buffer :which-key "prev buffer")
+		"b]" '(evil-next-buffer :which-key "next buffer")
+		)
 
 	;; open
 	(my-leader-def 'normal
@@ -57,10 +59,9 @@
 		"y" '(consult-yank-pop :which-key "yank pop"))
 
 	(my-leader-def 'normal
-		"." '(consult-global-mark :which-key "time travel"))
-
-	(my-leader-def 'normal
 		"g" '(:ignore t :which-key "travel")
+		"g." '(consult-global-mark :which-key "mark")
+		"gg" '(consult-goto-line :which-key "goto line")
 		"gb" '(consult-bookmark :which-key "bookmark"))
 
 
